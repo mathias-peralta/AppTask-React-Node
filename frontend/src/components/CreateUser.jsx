@@ -17,18 +17,34 @@ export default class CreateUser extends Component {
         
     }
     
+    getUsers = async () => {
+        const res = await axios.get('http://localhost:4000/api/users');
+        this.setState({
+            users: res.data
+        });
+    }
     onChangeUserName = (e) => {
         this.setState({
             username: e.target.value
         })
-    }   
+    }
+    onSubmit = async e => {
+
+        e.preventDefault();
+        const respuesta = await axios.post('http://localhost:4000/api/users', {
+            username: this.state.username
+        });
+        this.getUsers();
+        console.log(respuesta);
+
+    }
     render() {
         return (
             <div className = "row">
                 <div className = "col-md-4">
                     <div className="card card-body">
                         <h3>Crear Usuario</h3>
-                        <form >
+                        <form onSubmit = {this.onSubmit}>
                             <div className="form-group">
                                 <input
                                     type="text"
@@ -36,6 +52,9 @@ export default class CreateUser extends Component {
                                     onChange = {this.onChangeUserName}
                                 />
                             </div>
+                            <button type = "submit" className = "btn btn-dark btn-block">
+                                Guardar
+                            </button>
                         </form>
                     </div>
                 </div>
