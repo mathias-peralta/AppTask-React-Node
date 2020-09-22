@@ -5,7 +5,7 @@ require('./database');
 
 
 async function main() {
-    await app.listen(app.get('port'), process.env.PORT || 4000);
+    await app.listen(app.get('port'));
     console.log('server on port', app.get('port')); 
 }
 
