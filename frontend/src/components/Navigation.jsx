@@ -20,9 +20,9 @@ export default class Navigation extends Component {
             >
             <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+            <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+                <li className="nav-item active">
                     <Link className = "nav-link" to = "/">Notes</Link>
                 </li>
                 <li className="nav-item">
