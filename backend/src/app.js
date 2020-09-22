@@ -13,12 +13,8 @@ app.use(express.json());
 
 //routes
 //esto crea las rutas del servidor
-app.get('/api/users', (req, res) => {
-    res.send('users routes')
-})
+app.use('/api/users',require('./routes/users'))
 
-app.get('/api/notes', (req, res) => {
-    res.send('users notes')
-})
+app.use('/api/notes', require('./routes/notes'))
 
 module.exports = app;
