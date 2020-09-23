@@ -18,7 +18,6 @@ function App() {
         <Route path = "/create" component = {CreateNote}/>
         <Route path = "/user" component = {CreateUser}/>
       </div>
-
     </Router>
   );
 }
