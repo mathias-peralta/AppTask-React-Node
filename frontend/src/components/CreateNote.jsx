@@ -47,6 +47,7 @@ export default class CreateNote extends Component {
                     <form  onSubmit = {this.onSubmit}>
                         {/*Select user*/}
                         <div className="form-group">
+                            <label > Usuario:</label>
                             <select className = "form-control" name ="userSelectet" onChange = {this.onInputChange}>
                                 {
                                     this.state.users.map(user => 
@@ -57,17 +58,20 @@ export default class CreateNote extends Component {
                                 }
                             </select>
                         </div>
+
                         <div className="form-group">
-                            <input type="text" className = "form-control" placeholder = "titulo" name = "title" required onChange = {this.onInputChange}/>
+                            <label > Ingresa un comentario:</label>
+                            <textarea name="content" className = "form-control" placeholder = "content" required onChange = {this.onInputChange}></textarea>
                         </div>
-                        <div className="form-group">
-                            <textarea name="content" className = "form-control" placeholder = "content" onChange = {this.onInputChange}></textarea>
-                        </div>
-                        <div className="form-group">
+                        <div className="form-group" hidden>
                             <DatePicker className = "form-control"
                                 selected = {this.state.date}
                                 onChange = {this.onChangeDate}
                             />
+                        </div>
+                        <label>Añadir una imagen</label>
+                        <div className = "form-group ">
+                            <input type="file"/>
                         </div>
                         <button type = "submit" className = "btn btn-primary">
                             Publicar

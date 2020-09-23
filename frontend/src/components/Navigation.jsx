@@ -7,7 +7,7 @@ export default class Navigation extends Component {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
             <Link className="navbar-brand" to = "/">
-                NotesApp
+                UNIDA-Blog
             </Link>
             <button
             className="navbar-toggler"
@@ -23,10 +23,10 @@ export default class Navigation extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                    <Link className = "nav-link" to = "/">Notes</Link>
+                    <Link className = "nav-link" to = "/">Inicio</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className = "nav-link" to = "/create">Crear Notas</Link>
+                    <Link className = "nav-link" to = "/create">Publicar</Link>
                 </li>
                 <li className="nav-item">
                     <Link className = "nav-link" to = "/user">Crear Usuario</Link>

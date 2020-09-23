@@ -1,4 +1,4 @@
-const userCtrl = {};
+    const userCtrl = {};
 
 const User = require('../models/User');
 //Envia al cliente
@@ -8,9 +8,9 @@ userCtrl.getUsers = async(req, res) => {
 };
 userCtrl.createUsers = async(req, res) => {
     const { username } = req.body;
-    const newUser =  new User({ username });
+    const newUser =  new User({ username })
     await newUser.save();
-    res.send('User created')
+    res.json({message: 'saved'})
 };
 
 userCtrl.deleteUsers = async(req, res) => {
